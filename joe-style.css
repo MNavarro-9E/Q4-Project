@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/Minecraft.tff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: url(https://www.creativefabrica.com/wp-content/uploads/2021/01/28/Colorful-Watercolor-Background-Graphics-8158369-1.jpg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+body.loaded {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
+}
+nav {
+    display: flex;
+    gap: 60px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-size: 30px;
+    color: #5B6673;
+    white-space: nowrap;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #5B6673;
+    transition: width 0.5s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+}
+
+.view-profile {
+    background-color: #ffffff;
+    color: rgb(88, 105, 120);
+    padding: 10px 20px;
+    border-style: solid;
+    border-color: rgb(116, 146, 208);
+    border-width: 2px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile:hover {
+    background-color: hsl(206, 84%, 90%);
+}
+
+.search-bar {
+    padding: 6px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    outline: none;
+    min-width: 150px;
+    max-width: 300px;
+    flex-grow: 1;
+}
+h1{
+    color: #A65ECD;
+    background-color: #C8DAFF;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 15px;
+}
+.desc{
+    background: #c7a7fa;
+    background: linear-gradient(41deg, rgba(199, 167, 250, 1) 17%, rgba(235, 203, 255, 1) 77%);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 0px 4px rgba(255,247,123,1);
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(255,247,123,1);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(255,247,123,1);
+}

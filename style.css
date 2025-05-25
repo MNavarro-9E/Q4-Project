@@ -1,0 +1,243 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/Minecraft.tff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffffff, #9dc0d5);
+}
+
+body {
+    min-height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+body.loaded {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
+}
+
+nav {
+    display: flex;
+    gap: 60px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-size: 30px;
+    color: #5B6673;
+    white-space: nowrap;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #5B6673;
+    transition: width 0.5s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.user-icon {
+    width: 50px;
+    height: auto;
+    border-radius: 999px;
+}
+
+.view-profile {
+    background-color: #ffffff;
+    color: rgb(88, 105, 120);
+    padding: 10px 20px;
+    border-style: solid;
+    border-color: rgb(116, 146, 208);
+    border-width: 2px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile:hover {
+    background-color: hsl(206, 84%, 90%);
+}
+
+.search-bar {
+    padding: 6px 10px;
+    margin-left: 210px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    outline: none;
+    min-width: 150px;
+    max-width: 300px;
+    flex-grow: 1;
+}
+
+.profiles {
+    margin-top: 40px;
+    border-radius: 57px;
+    border-style: solid;
+    border-color: #1d1657;
+    background: #d0ddef;
+    border-width: 1px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    justify-content: flex-start;
+}
+
+.card {
+    width: 200px;
+    margin: 25px;
+    background-color: #b9d3fd;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: #6174cb;
+    color: #384870;
+    font-family: 'Minecraft';
+    box-sizing: border-box;
+}
+
+.main-title {
+    box-sizing: border-box;
+    background: #b2c7e5;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #0f22a1;
+    border-width: 1px;
+    height: 260px;
+    position: relative;
+    padding: 20px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 70px;
+    font-family: 'Minecraft';
+    color: white;
+}
+
+.star {
+  position: absolute;
+  width: 40px; 
+  height: 40px; 
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%, 50% 70%,
+    21% 91%, 32% 57%, 2% 35%,
+    39% 35%
+  );
+  pointer-events: none;
+  opacity: 0.9;
+  transform: translate(-50%, -50%);
+  animation: fadeOut 0.8s forwards;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.712)); 
+}
+
+
+
+
+@keyframes fadeOut {
+    to {
+        transform: scale(1.5) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 45%;
+        margin: 15px auto;
+    }
+    nav {
+        gap: 20px;
+    }
+    nav a {
+        font-size: 24px;
+    }
+    .title {
+        font-size: 50px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    nav li {
+        display: block;
+    }
+    nav a {
+        font-size: 22px;
+    }
+    .search-bar {
+        max-width: 100%;
+        width: 100%;
+        min-width: auto;
+    }
+    .profiles {
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+        border-radius: 25px;
+    }
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .main-title {
+        height: auto;
+        padding: 15px;
+        margin-top: 30px;
+    }
+    .title {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .view-profile {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    nav a {
+        font-size: 18px;
+    }
+    .title {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+}
+/* @font-face imports a custom font
+& @media adds flexibility :) */
